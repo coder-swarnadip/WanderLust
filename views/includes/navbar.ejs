@@ -1,0 +1,208 @@
+<style>
+  /* Navbar Styling */
+ 
+
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fe424d !important;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #333 !important;
+    font-weight: 500;
+    margin-right: 12px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .nav-link:hover {
+    color: #fe424d !important;
+  }
+
+  /* Search Bar */
+  .search-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin-left: 200px;
+  }
+
+  .search-inp {
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  width: 450px; /* Increased width */
+  border: 1px solid #ccc;
+  transition: all 0.3s;
+}
+
+.search-inp:focus {
+  border-color: #fe424d;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(254, 66, 77, 0.3);
+}
+
+/* Responsive: Make input smaller on small screens */
+@media (max-width: 768px) {
+  .search-inp {
+    width: 100%; /* Full width on small screens */
+  }
+  .search-container{
+    margin-left: auto;
+  }
+}
+
+
+  .search-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fe424d;
+    color: white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .search-btn:hover {
+    background: #e0313b;
+  }
+
+  /* Profile Dropdown */
+  .profile-dropdown {
+    border: none;
+    background: none;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+  }
+
+  .profile-dropdown:hover {
+    color: #fe424d;
+  }
+
+
+/* Default Navbar Styling */
+.navbar-custom {
+  background: white; /* White background */
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+
+/* Navbar Toggler Button */
+.navbar-toggler {
+  border: none;
+  outline: none;
+}
+
+/* Fix Collapsed Navbar Alignment on Mobile */
+@media (max-width: 768px) {
+  .navbar-custom {
+    background: white !important; /* Ensure white bg on mobile */
+    padding: 8px 15px;
+  }
+
+  .navbar-collapse {
+     /* Center align navbar items */
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px 0; /* Add spacing */
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-bottom: 10px; /* Add spacing */
+  }
+
+  .search-inp {
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    text-align: center;
+    width: 100%;
+  }
+
+  .profile-dropdown {
+    width: 100%;
+  }
+}
+
+</style>
+
+<nav class="navbar navbar-expand-md navbar-custom border-bottom sticky-top">
+  <div class="container-fluid">
+    <!-- Brand Logo -->
+   <!-- Brand Logo with Tooltip -->
+<a class="navbar-brand" href="/listings" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Explore">
+  <i class="fa-regular fa-compass me-1"></i> Wanderlust
+</a>
+
+
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Content -->
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav mx-auto">
+        <!-- Search Bar -->
+        <form class="search-container d-flex" role="search">
+          <input class="form-control search-inp" type="search" placeholder="Search destinations" aria-label="Search">
+          <button class="search-btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+
+      <!-- User Links -->
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link" href="/listings/new"><b>List your home</b></a>
+
+        <% if (!currUser) { %>
+          <a class="nav-link" href="/signup"><b><i class="fa-solid fa-user-plus"></i> Sign up</b></a>
+          <a class="nav-link" href="/login"><b> <i class="fa-solid fa-right-to-bracket"></i> Log in</b></a>
+        <% } else { %>
+          <!-- Profile Dropdown -->
+          <div class="dropdown">
+            <button class="profile-dropdown dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-user-circle"></i> Account
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="/listings/my">My Listings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="/logout"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+            </ul>
+          </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>

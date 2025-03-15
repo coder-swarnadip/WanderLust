@@ -1,0 +1,230 @@
+body {
+
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+}
+
+.container {
+    flex: 1;
+}
+
+/*NAVBAR*/
+
+.navbar {
+    height: 5rem;
+    background-color: white;
+
+}
+
+.fa-compass {
+    font-size: 2rem;
+
+    color: #fe424d;
+}
+
+.nav-link {
+    color: #222222 !important;
+
+}
+
+
+
+/*FOOTER*/
+
+.f-info-links a {
+    text-decoration: none;
+    color: #222222;
+
+
+}
+
+.f-info-links a:hover {
+    text-decoration: underline;
+
+
+
+}
+
+.f-info-links,
+.f-info-social,
+.f-info-brand {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+
+.f-info-social i {
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+.f-info {
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+    text-align: center;
+}
+
+/*CARD*/
+
+.listing-card {
+
+    border: none !important;
+    margin-bottom: 2rem;
+
+
+}
+
+.card-body {
+    padding: 0 !important;
+}
+
+.card-img-top {
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+
+.card-text p {
+    font-weight: 400;
+}
+
+.listing_link {
+
+    text-decoration: none;
+}
+
+
+/*CARD EFFECT*/
+
+.card-img-overlay {
+    opacity: 0;
+}
+
+.card-img-overlay:hover {
+    background-color: white;
+    opacity: 0.2;
+
+}
+
+.add-btn {
+    background-color: #fe424d !important;
+    border: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.add-btn:hover {
+    transform: scale(1.1);
+    /* Increases size by 10% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adds shadow */
+
+
+}
+
+
+/*show page*/
+
+.show-img {
+    height: 30vh;
+
+}
+
+.btns {
+    display: flex;
+}
+
+
+.show-card {
+    padding-left: 0;
+    padding-right: 0;
+
+}
+
+.dlt-btn {
+    border: none !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.dlt-btn:hover {
+    transform: scale(1.1);
+    /* Increases size by 10% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Adds shadow */
+
+}
+
+
+
+/* map */
+
+#map {
+    height: 400px;
+    width: 80vh;
+}
+
+
+
+
+
+/* error message */
+
+
+
+
+
+
+/*index icons*/
+
+#filters {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+
+  .filter {
+    text-align: center;
+    margin: 2rem;
+    margin-top: 2rem;
+    opacity: 0.6;
+    text-decoration: none;
+    color: black;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+
+  }
+
+  .filter p {
+    font-size: 0.8rem;
+  }
+  .tax-info{
+    display: none;
+  }
+
+  .tax-toggle{
+    border: 1px solid black;
+    border-radius: 1rem;
+    height: 3.25rem;
+    padding: 1rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+
+
+  }
+
+
