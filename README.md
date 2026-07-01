@@ -78,4 +78,5 @@ This project is licensed under the **MIT License**.
 
 ### 📩 Connect with Me
 💻 GitHub: [coder-swarnadip](https://github.com/coder-swarnadip)
-📧 Email: your-email@example.com
+📧 Email: swarnadipmng@gmail.com
+
